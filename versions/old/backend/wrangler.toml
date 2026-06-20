@@ -1,0 +1,24 @@
+#:schema node_modules/wrangler/config-schema.json
+
+name = "xavvysuite-backend"
+main = "src/index.js"
+compatibility_date = "2026-06-02"
+
+[vars]
+JWT_SECRET = "your_fallback_jwt_secret_token"
+
+[[d1_databases]] 
+binding = "DB" 
+database_name = "xavvysuite-db" 
+database_id = "0bfdda42-2460-4fc2-bbf7-cfaab42a52a0"
+
+[[r2_buckets]]
+binding = "XAVVYREPO"
+bucket_name = "xavvyrepo"
+
+[triggers]
+crons = [
+  "0 6 * * 1",
+  "0 17 * * 5",
+  "0 9 26 * *"
+]

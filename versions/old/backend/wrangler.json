@@ -1,0 +1,20 @@
+{
+	"name": "xavvysuite-backend",
+	"main": "src/index.js",
+	"compatibility_date": "2026-01-01",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "xavvysuite-db",
+			"database_id": "0bfdda42-2460-4fc2-bbf7-cfaab42a52a0"
+		},
+		{
+			"binding": "xavvysuite_db",
+			"database_name": "xavvysuite-db",
+			"database_id": "0bfdda42-2460-4fc2-bbf7-cfaab42a52a0"
+		}
+	],
+	"vars": {
+		"JWT_SECRET": "super-secret-xavvysuite-key-2026"
+	}
+}

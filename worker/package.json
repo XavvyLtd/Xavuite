@@ -1,0 +1,25 @@
+{
+  "name": "xavvysuite-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "deploy:prod": "wrangler deploy --env production",
+    "db:migrate": "wrangler d1 execute xavvysuite-fresh-db --file=schema/001_core.sql --remote",
+    "db:seed": "wrangler d1 execute xavvysuite-fresh-db --file=schema/002_seed_xavvy.sql --remote",
+    "db:local:migrate": "wrangler d1 execute xavvysuite-fresh-db --file=schema/001_core.sql --local",
+    "db:local:seed": "wrangler d1 execute xavvysuite-fresh-db --file=schema/002_seed_xavvy.sql --local",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jose": "^5.2.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240512.0",
+    "typescript": "^5.4.0",
+    "wrangler": "^3.57.0"
+  }
+}

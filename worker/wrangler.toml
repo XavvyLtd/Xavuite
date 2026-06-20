@@ -1,0 +1,76 @@
+name               = "xavvysuite-core-api"
+main               = "src/index.ts"
+compatibility_date = "2026-06-02"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Shared vars ───────────────────────────────────────────────
+[vars]
+DEPLOYMENT_MODE  = "development"
+TENANT_ID        = "xavvy-tenant-001"
+TENANT_NAME      = "Xavvy"
+TENANT_DOMAIN    = "app.xavvy.uk"
+EMAIL_FROM       = "XavvySuite <automation@xavvy.uk>"
+EMAIL_HR         = "hr@xavvy.uk"
+EMAIL_STAFF      = "all_staff@xavvy.uk"
+EMAIL_API_KEY    = "re_9txruagG_7iKKTARPNcvhCNMWVCGuZQtV"
+ENCRYPTION_KEY   = "0000000000000000000000000000000000000000000000000000000000000000"
+JWT_SECRET       = "xavvysuite-dev-jwt-secret-min32chars-donotuseinprod"
+STRIPE_SECRET_KEY             = "sk_live_..."
+STRIPE_WEBHOOK_SECRET         = "whsec_..."
+STRIPE_PRICE_STARTER_MONTHLY  = "price_..."
+STRIPE_PRICE_PROFESSIONAL_MONTHLY = "price_..."
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[d1_databases]]
+binding       = "DB"
+database_name = "xavvysuite-prod-db"
+database_id   = "xavvysuite-prod-db"
+
+[[r2_buckets]]
+binding     = "STORE"
+bucket_name = "xavvysuite-core-store"
+
+[[kv_namespaces]]
+binding = "KV"
+id      = "f28805497d614a62b6d6c56c6c71893a"
+
+# ── Production ────────────────────────────────────────────────
+[env.production]
+name = "xavvysuite-core-api"
+
+[env.production.vars]
+DEPLOYMENT_MODE  = "production"
+TENANT_ID        = "xavvy-tenant-001"
+TENANT_NAME      = "Xavvy"
+TENANT_DOMAIN    = "app.xavvy.uk"
+EMAIL_FROM       = "XavvySuite <automation@xavvy.uk>"
+EMAIL_HR         = "hr@xavvy.uk"
+EMAIL_STAFF      = "all_staff@xavvy.uk"
+EMAIL_API_KEY    = "re_9txruagG_7iKKTARPNcvhCNMWVCGuZQtV"
+ENCRYPTION_KEY   = "0000000000000000000000000000000000000000000000000000000000000000"
+STRIPE_SECRET_KEY             = "sk_live_..."
+STRIPE_WEBHOOK_SECRET         = "whsec_..."
+STRIPE_PRICE_STARTER_MONTHLY  = "price_..."
+STRIPE_PRICE_PROFESSIONAL_MONTHLY = "price_..."
+
+[env.production.triggers]
+crons = ["*/30 * * * *"]
+
+[[env.production.d1_databases]]
+binding       = "DB"
+database_name = "xavvysuite-prod-db"
+database_id   = "74b42492-789b-4794-a0f8-2d394235ea37"
+
+[[env.production.r2_buckets]]
+binding     = "STORE"
+bucket_name = "xavvysuite-core-store"
+
+[[env.production.kv_namespaces]]
+binding = "KV"
+id      = "f28805497d614a62b6d6c56c6c71893a"
+
+[[env.production.routes]]
+pattern   = "api-v2.xavvy.uk/*"
+zone_name = "xavvy.uk"

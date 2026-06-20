@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Expo / React Native
+.expo/
+**/.expo/
+dist/
+web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Native build output (if prebuild was ever run)
+android/
+ios/
+**/android/
+**/ios/
+
+# Environment / secrets — never commit real credentials
+.env
+.env.local
+.env.*.local
+google-services.json
+google-play-key.json
+*.pem
+
+# Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Cloudflare Workers
+.wrangler/
+**/.wrangler/
+
+# Misc build output
+dist/
+build/
+*.tsbuildinfo
