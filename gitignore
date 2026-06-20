@@ -2,6 +2,10 @@
 node_modules/
 **/node_modules/
 
+# Backup folders — not part of the tracked codebase
+backup/
+**/backup/
+
 # Expo / React Native
 .expo/
 **/.expo/
