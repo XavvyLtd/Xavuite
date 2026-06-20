@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "XavvySuite",
+    "slug": "xavuite-hodkyu40ekxwwhrudmzn7",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020617"
+    },
+"android": {
+  "adaptiveIcon": {
+    "foregroundImage": "./assets/adaptive-icon.png",
+    "backgroundColor": "#6366F1"
+  },
+  "package": "com.xavvysuite.app",
+  "versionCode": 1,
+  "permissions": [
+    "ACCESS_FINE_LOCATION",
+    "ACCESS_COARSE_LOCATION",
+    "CAMERA",
+    "READ_EXTERNAL_STORAGE",
+    "WRITE_EXTERNAL_STORAGE",
+    "RECEIVE_BOOT_COMPLETED",
+    "VIBRATE",
+    "POST_NOTIFICATIONS",
+    "android.permission.ACCESS_COARSE_LOCATION",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.CAMERA",
+    "android.permission.RECORD_AUDIO"
+    ]
+  },
+    "scheme": "xavvysuite",
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "XavvySuite uses your location to record where you clock in and out."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "XavvySuite uses your camera to capture expense receipts."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#6366F1",
+          "sounds": []
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "apiBaseUrl": "https://api-v2.xavvy.uk",
+      "eas": {
+        "projectId": "3092d4b4-07b1-4548-af8f-b7131fa5fdce"
+      }
+    },
+    "owner": "xavvy-ltd"
+  }
+}
